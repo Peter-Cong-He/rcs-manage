@@ -28,6 +28,7 @@ export default {
       this.$router.push(this.menu.url)
       // this.contentUrl = this.menu.url
       console.log('url', this.menu.url)
+      console.log(this.$options, this.$router)
     }
   }
 }

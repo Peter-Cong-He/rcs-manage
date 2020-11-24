@@ -9,29 +9,33 @@ VueRouter.prototype.push = function push (location) {
 Vue.use(VueRouter)
 
 const routes = [
-  // {
-  // path: '/home',
-  // name: 'Home',
-  // compnent: () => import(/* webpackChunkName: "home" */ '../layout/Home.vue'),
-  // children: [
   {
-    path: '/systemparameter',
-    compnent: () => import(/* webpackChunkName: "home" */ '../views/System/SystemParameter.vue')
+    path: '/home',
+    name: 'Home',
+    compnent: () => import(/* webpackChunkName: "home" */ '../layout/Home.vue'),
+    children: [
+      {
+        path: 'systemparameter',
+        compnent: () => import(/* webpackChunkName: "home" */ '../views/System/SystemParameter.vue')
+      },
+      {
+        path: 'systembacklist',
+        compnent: () => import(/* webpackChunkName: "home" */ '../views/System/Blacklist/SystemBacklist.vue')
+      },
+      {
+        path: 'userbacklist',
+        compnent: () => import(/* webpackChunkName: "home" */ '../views/System/Blacklist/UserBacklist.vue')
+      },
+      {
+        path: 'channelbacklist',
+        compnent: () => import(/* webpackChunkName: "home" */ '../views/System/Blacklist/ChannelBacklist.vue')
+      }
+    ]
   },
   {
-    path: '/systembacklist',
-    compnent: () => import(/* webpackChunkName: "home" */ '../views/System/Blacklist/SystemBacklist.vue')
-  },
-  {
-    path: '/userbacklist.vue',
-    compnent: () => import(/* webpackChunkName: "home" */ '../views/System/Blacklist/UserBacklist.vue')
-  },
-  {
-    path: '/channelbacklist',
+    path: '/xx',
     compnent: () => import(/* webpackChunkName: "home" */ '../views/System/Blacklist/ChannelBacklist.vue')
   },
-  // ]
-  // },
   {
     path: '',
     redirect: '/home/index'
@@ -40,7 +44,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'hash',
-  base: process.env.BASE_URL,
+  // base: process.env.BASE_URL,
   routes
 })
 

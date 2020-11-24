@@ -73,6 +73,7 @@
           <el-header height="120px"><div>header</div></el-header>
           <el-main>
             <TabBar></TabBar>
+            <router-view/>
           </el-main>
         </el-container>
       </el-main>

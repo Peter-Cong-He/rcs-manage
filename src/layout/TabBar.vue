@@ -6,8 +6,7 @@
             :label="item.title"
             :name="item.name"
         >
-        {{contentUrl}}
-             <router-view></router-view>
+             <!-- <router-view></router-view> -->
       </el-tab-pane>
   </el-tabs>
 </template>
@@ -22,10 +21,8 @@ export default {
     // ...mapState(['editableTabsValue', 'contentUrl'])
     ...mapState({
       editableTabsValue: state => state.editableTabsValue,
-      contentUrl (state) {
-        console.log('计算属性', state.contentUrl)
-        this.$router.push(state.contentUrl)
-        return state.contentUrl
+      options (state) {
+        return this.state.contentUrl
       }
     })
   },
